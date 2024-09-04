@@ -2,6 +2,8 @@ from django.db import models
 
 from django.contrib.auth.models import AbstractUser
 
+from django.utils.translation import gettext_lazy as _
+
 
 class User(AbstractUser):
     description = models.TextField(null=True, blank=True)
@@ -12,8 +14,9 @@ class User(AbstractUser):
 
 
 class Language(models.Model):
-    name = models.CharField(max_length=100)
+    name = models.CharField(max_length=100, verbose_name=_('Name'))
     code = models.CharField(max_length=10)
+    bio = models.TextField()
 
     class Meta:
         verbose_name = 'Language'
