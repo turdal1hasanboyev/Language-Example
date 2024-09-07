@@ -30,7 +30,6 @@ urlpatterns = [] + i18n_patterns(
     re_path(r'^static/(?P<path>.*)$', serve, {'document_root': settings.STATIC_ROOT}),
 )
 
-
 handler404 = "config.errors.page_not_found_view"
 
 if settings.DEBUG:
